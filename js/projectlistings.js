@@ -1,0 +1,3 @@
+function displayProjects() {
+    alert("hi");
+}

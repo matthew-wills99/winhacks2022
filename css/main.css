@@ -23,6 +23,10 @@ li, a, button {
     text-decoration: none;
 }
 
+.here {
+    font-weight: bold;
+}
+
 header {
     display: flex;
     justify-content: flex-end;
@@ -68,7 +72,7 @@ button:hover {
     background-color: var(--accent_yellow_emphasis);
 }
 
-.content {
+.container {
     background-color: var(--bg_dark_white);
     height: 1600px;
 }
