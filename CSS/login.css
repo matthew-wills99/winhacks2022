@@ -1,27 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+:root {
+    --bg_white: rgb(255, 255, 255);
+    --accent_yellow: rgb(238, 201, 38);
+    --accent_yellow_emphasis: rgb(238, 175, 38);
+    --text_grey: rgb(134, 134, 134);
+    --bg_dark_white: rgb(200, 200, 200);
+    --bg_modal_shade: rgb(0, 0, 0, 0.5);
+    --black: rgb(0, 0, 0);
+}
+
 .modal {
   display: none;
   position: fixed;
   z-index: 1;
-  padding: 100px;
+  padding: 200px;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgb(0, 0, 0);
-  background-color: rgb(0, 0, 0, 0.4);
+  background-color: var(--bg_modal_shade);
 }
 
 .modal-content{
-  background-color: #fefefe;
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--bg_white);
   margin: auto;
   padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
 }
 
 .close {
-  color: #aaaaaa;
+  color: var(--text_grey);
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -29,7 +42,7 @@
 
 .close:hover,
 .close:focus{
-  color: #000;
+  color: var(--black);
   text-decoration: none;
   cursor: pointer;
 }

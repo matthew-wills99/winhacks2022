@@ -3,62 +3,43 @@
 <html>
 	<head>
         <title>HOME</title>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, internal-scale=1">
+
+        <script src="../js/main.js" type="text/javascript"></script>
         <link rel="stylesheet" href="../css/main.css">
         <link rel="stylesheet" href="../css/login.css">
 	</head>
 
 	<body>
-        <div class="navbar">
-            <div class="navbar-menu centered">
-                <a href="projectsignup.html">View Projects</a>
-                <a href="projectposting.html">Create Project</a>
-                <a href="signup.html">Sign Up</a>
-                <a href="login.html">Log In</a>
-            </div>
-        </div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <h1>HOME PAGE</h1>
-        <button id="login">Login</button>
-        <div id="myModal" class="modal">
+        <header>
+            <a class="logo" href="home.html"><img class="logo" src="../media/logo_small.png" alt="logo" ></a>
+            <nav>
+                <ul class="nav-contents">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="projectpostingform.html">Create project</a></li>
+                    <li><a href="projectlistings.html" class="here">Browse projects</a></li>
+                </ul>
+            </nav>
+            <a class="cta" href="#"><button id="login" onclick="displayModal()">Log in</button></a>
+        </header>
+
+        <div id="loginModal" class="modal">
             <div class="modal-content">
-                <span class="close">&times;</span>
-                Email: <input type="text" required>
-                <br><br>
-                Password: <input type="password" required>
-                <br><br>
-                <input type="button" value="Login" >
-                <br><br>
+                <span class="close" onclick="hideModal()">&times;</span>
+                <form>
+                    <label for="email">Email:</label><br>
+                    <input type="text" id="email" name="email" required><br>
+
+                    <label for="pass">Password:</label><br>
+                    <input type="password" id="pass" name="pass" required><br>
+
+                    <input type="submit" value="Submit">
+                </form>
             </div>
         </div>
-        <script>
-            var modal = document.getElementById("myModal");
-
-
-            var btn = document.getElementById("login");
-
-
-            var span = document.getElementsByClassName("close")[0];
-
-
-            btn.onclick = function() {
-                modal.style.display = "block";
-            }
-
-
-            span.onclick = function() {
-                modal.style.display = "none";
-            }
-
-
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                     modal.style.display = "none";
-                }
-            }
-        </script>
     </body>
 </html>
