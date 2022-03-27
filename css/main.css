@@ -58,7 +58,7 @@ header {
     text-decoration: underline;
 }
 
-button {
+button[id=login] {
     padding: 9px 25px;
     background-color: var(--accent_yellow);
     border: none;
@@ -70,9 +70,10 @@ button {
 
 button:hover {
     background-color: var(--accent_yellow_emphasis);
+    text-decoration: underline;
 }
 
-.container {
+.content {
     background-color: var(--bg_dark_white);
     height: 1600px;
 }

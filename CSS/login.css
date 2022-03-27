@@ -6,15 +6,85 @@
     --accent_yellow_emphasis: rgb(238, 175, 38);
     --text_grey: rgb(134, 134, 134);
     --bg_dark_white: rgb(200, 200, 200);
-    --bg_modal_shade: rgb(0, 0, 0, 0.5);
+    --bg_modal_shade: rgb(0, 0, 0, 0.7);
     --black: rgb(0, 0, 0);
+}
+
+h3 {
+  padding-top: 10px;
+  text-align: center;
+}
+
+form {
+  padding-top: 30px;
+}
+
+.noaccount {
+  line-height: 12px;
+  position: relative;
+  padding-top: 50px;
+}
+
+.noaccount p {
+  font-size: 12px;
+}
+
+.noaccount a {
+  font-size: 12px;
+}
+
+.noaccount a:visited,
+.noaccount a {
+  color: var(--accent_yellow)
+}
+
+.noaccount a:hover {
+  text-decoration: underline;
+}
+
+form input[type=submit] {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--text_grey);
+  text-decoration: none;
+  width: 100%;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  border-width: 2px;
+  border-color: var(--bg_dark_white);
+  background-color: var(--accent_yellow);
+  cursor:pointer;
+}
+
+form input[type=submit]:hover {
+  background-color: var(--accent_yellow_emphasis);
+}
+
+form input[type=password],
+form input[type=text] {
+  border: solid;
+  border-width: 2px;
+  border-color: var(--bg_dark_white);
+  border-radius: 5px;
+  padding-left: 10px;
+  width: 100%;
+  height: 30px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+}
+
+form input:focus {
+  outline-width: 0;
+  border-color: var(--accent_yellow);
 }
 
 .modal {
   display: none;
   z-index: 1;
   position: fixed;
-  padding: 200px;
+  padding: 300px;
   left: 0;
   top: 0;
   width: 100%;
@@ -25,19 +95,22 @@
 
 .modal-content{
   font-family: "Montserrat", sans-serif;
+  line-height: 25px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text_grey);
   background-color: var(--bg_white);
   margin: auto;
   padding: 20px;
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 375px;
   border-radius: 10px;
 }
 
 .close {
   color: var(--text_grey);
   float: right;
-  font-size: 28px;
-  font-weight: bold;
+  font-size: 30px;
 }
 
 .close:hover,
