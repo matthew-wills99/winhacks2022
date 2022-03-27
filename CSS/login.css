@@ -31,6 +31,7 @@ form {
 
 .no-account a {
   font-size: 12px;
+  cursor: pointer;
 }
 
 .no-account a:visited,
