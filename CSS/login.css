@@ -19,26 +19,26 @@ form {
   padding-top: 30px;
 }
 
-.noaccount {
+.no-account {
   line-height: 12px;
   position: relative;
   padding-top: 50px;
 }
 
-.noaccount p {
+.no-account p {
   font-size: 12px;
 }
 
-.noaccount a {
+.no-account a {
   font-size: 12px;
 }
 
-.noaccount a:visited,
-.noaccount a {
+.no-account a:visited,
+.no-account a {
   color: var(--accent_yellow)
 }
 
-.noaccount a:hover {
+.no-account a:hover {
   text-decoration: underline;
 }
 
