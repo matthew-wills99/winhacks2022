@@ -12,11 +12,10 @@
         <script src="../js/main.js" type="text/javascript"></script>
         <link rel="stylesheet" href="../css/main.css">
         <link rel="stylesheet" href="../css/login.css">
-        <link rel="stylesheet" href="../css/signup.css">
 	</head>
 
 	<body>
-        <header>
+        <header class="navbar">
             <a class="logo" href="home.html"><img class="logo" src="../media/we_spark_icon.png" alt="logo" width="60%"></a>
             <nav>
                 <ul class="nav-contents">
@@ -37,10 +36,10 @@
                 <h3>Log in to WE-SPARK</h3>
                 <form autocomplete="off">
                     <label for="email">Email:</label><br>
-                    <input type="text" id="email" name="email" required><br><br>
+                    <input type="text" id="loginEmail" name="email" required><br><br>
 
                     <label for="pass">Password:</label><br>
-                    <input type="password" id="pass" name="pass" required><br><br><br>
+                    <input type="password" id="loginPass" name="pass" required><br><br><br>
 
                     <input type="submit" value="Log in">
                 </form>
@@ -49,43 +48,39 @@
                 </div>
             </div>
         </div>
+        
         <div id="signupModal" class="modal">
 
             <div class="modal-content-signup">
                 <span class="close" onclick="hideModalSignup()">&times;</span>
                 <h3>Sign up for WE-SPARK</h3>
-                <form>
-                    <label for="fname">First Name:</label>
-                    <br>
-                    <input type="text" id="fname" name="fname" required>
-                    <br><br>
-                    <label for="lname">Last Name:</label>
-                    <br>
-                    <input type="text" id="lname" name="lname" required>
-                    <br><br>
-                    <label for="email">Email:</label>
-                    <br>
-                    <input type="text" id="email" name="email" required>
-                    <br><br>
-                    <label for="pass">Password:</label>
-                    <br>
-                    <input type="password" id="pass" name="pass" required>
-                    <br><br>
-                    <label for="cpass">Confirm Password:</label>
-                    <br>
-                    <input type="password" id="cpass" name="cpass" required>
-                    <br><br><br>
+                <form autocomplete="off">
+                    <label for="fname">First Name:</label><br>
+                    <input type="text" id="signupFName" name="fname" required><br><br>
+
+                    <label for="lname">Last Name:</label><br>
+                    <input type="text" id="signupLName" name="lname" required><br><br>
+
+                    <label for="email">Email:</label><br>
+                    <input type="text" id="signupEmail" name="email" required><br><br>
+
+                    <label for="pass">Password:</label><br>
+                    <input type="password" id="signupPass" name="pass" required><br><br> 
+
+                    <label for="cpass">Confirm Password:</label><br>
+                    <input type="password" id="signupCPass" name="cpass" required><br><br><br>
+
                     <input type="submit" value="Sign up">
                 </form>
             </div>
         </div>
+        
         <div class="content">
-
-            <img class="home-bg"src="../media/home_page_bg.png" alt="WE-SPARK Health Institute">
-
-            <div class="row">
-                <div class="sponsor">
-                    <a href="http://www.uwindsor.ca"><img src="../media/logo_uow.png" alt="University of Windsor"></a>
+            <div class="container">
+                <img class="home-bg"src="../media/home_page_bg.png" alt="WE-SPARK Health Institute">
+                <div class="centered">
+                    <h1 class="title">Welcome to the WE-SPARK Health Institute Project Board!</h1>
+                    <a href="https://www.wesparkhealth.com"><button id="to-official-site">Visit Our Site</button></a>
                 </div>
             </div>
         </div>
