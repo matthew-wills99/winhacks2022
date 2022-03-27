@@ -1,14 +1,30 @@
-function displayModal() {
+function displayModalLogin() {
     document.getElementById("loginModal").style.display="block";
 }
 
-function hideModal() {
+function hideModalLogin() {
     document.getElementById("loginModal").style.display="none";
 }
 
 window.onmousedown = function(event) {
-    let modal = document.getElementById("loginModal")
-    if (event.target == modal) {
-        modal.style.display = "none";
+    let modalLogin = document.getElementById("loginModal")
+    if (event.target == modalLogin) {
+        hideModalLogin();
+    }
+}
+//Signup
+function displayModalSignup() {
+    document.getElementById("signupModal").style.display="block";
+    hideModalLogin();
+}
+
+function hideModalSignup() {
+    document.getElementById("signupModal").style.display="none";
+}
+
+window.onmousedown = function(event) {
+    let modalSignup = document.getElementById("signupModal")
+    if (event.target == modalSignup) {
+        hideModalSignup();
     }
 }
