@@ -9,14 +9,16 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, internal-scale=1">
 
-        <script src="..\js\projectlistingfilters.js" type="text/javascript"></script>
+        <script src="..\js\main.js" type="text/javascript"></script>
         <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/projectlistings.css">
+        <link rel="stylesheet" href="../css/login.css">
         
 	</head>
 
-	<body onload="displayProjects()">
-        <header>
-            <a class="logo" href="home.html"><img class="logo" src="../media/logo_small.png" alt="logo" ></a>
+	<body>
+        <header class="navbar">
+            <a class="logo" href="home.html"><img class="logo" src="../media/we_spark_icon.png" alt="logo" width="60%"></a>
             <nav>
                 <ul class="nav-contents">
                     <li><a href="home.html">Home</a></li>
@@ -24,59 +26,112 @@
                     <li><a href="projectlistings.html" class="here">Browse projects</a></li>
                 </ul>
             </nav>
-            <a class="cta" href="#"><button id="login">Log in</button></a>
-            
+
+            <a href="#"><button id="login" onclick="displayModalLogin()">Log in</button></a>
         </header> 
-            <img class="home-bg-projects"src="../media/internal-banner.jpg" alt="WE-SPARK Health Institute">
-   
-         
-        <div>
-            <label for="funding"><b>Filter by Funding</b></label>
-            <div>
-                <select id="funding">
-                    <option value="1">All</option>
-                    <option value="2">Projects Funded by WE-SPARK</option>
-                    <option value="3">Nationally/Internationally Externally Funded Projects</option>
-                    <option value="4">Locally Externally Funded Projects</option>
-                </select>
-                <br><br>
-                <label for="funding"><b>Filter by Status</b></label>
-                <form>
-                    <label>Active</label>
-                    <input type="checkbox" id="active">
-                    <label>Inactive</label>
-                    <input type="checkbox">
+
+        <div id="loginModal" class="modal">
+
+            <div class="modal-content">
+                <span class="close" onclick="hideModalLogin()">&times;</span>
+                <h3>Log in to WE-SPARK</h3>
+                <form autocomplete="off">
+                    <label for="email">Email:</label><br>
+                    <input type="text" id="loginEmail" name="email" required><br><br>
+
+                    <label for="pass">Password:</label><br>
+                    <input type="password" id="loginPass" name="pass" required><br><br><br>
+
+                    <input type="submit" value="Log in">
                 </form>
-                
-                <form>
-                    <label for="datemin"><b>Filter by Date Posted: Enter a date after 2014-01-01</b></label>
-                    <input type="date" id="datemin" name="datemin" min="2014-01-01" max="2022-03-28"><br><br>
-                </form>
-                
-                <form>
-                    <label for="funding"><b>Filter by Institution</b></label><br>
-                    <input type="checkbox" id="institution1" name="institution1" value="Hotel Dieu Grace Healthcare">
-                    <label for="institution1">Hotel Dieu Grace Healthcare</label><br>
-                    <input type="checkbox" id="institution2" name="instituion2" value="National/International">
-                    <label for="instituion2">National/International</label><br>
-                    <input type="checkbox" id="institution3" name="institution3" value="Regional">
-                    <label for="institution3"> Regional</label><br>
-                    <input type="checkbox" id="institution4" name="institution4" value="St. Clair College">
-                    <label for="institution4">St. Clair College</label><br>
-                    <input type="checkbox" id="institution5" name="institution5" value="University of Windsor">
-                    <label for="institution4">University of Windsor</label><br>
-                    <input type="checkbox" id="institution5" name="institution5" value="Windsor Regional Hospital">
-                    <label for="institution4">Windsor Regional Hospital</label><br>
-                </form>
-            </div>  
-        </div>
-        <div>
-            <div>
-                <img src="../media/logo_uow.png" alt="University of Windsor">
-                <img src="../media/logo_wrh.png" alt="University of Windsor">
-                <img src="../media/logo_scc.png" alt="University of Windsor">
+                <div class="no-account">
+                    <p>Don't have an account? <a class="cta" onclick="displayModalSignup()"><b>Sign up</b></a></p>
+                </div>
             </div>
-            
+        </div>
+        
+        <div id="signupModal" class="modal">
+
+            <div class="modal-content-signup">
+                <span class="close" onclick="hideModalSignup()">&times;</span>
+                <h3>Sign up for WE-SPARK</h3>
+                <form autocomplete="off">
+                    <label for="fname">First Name:</label><br>
+                    <input type="text" id="signupFName" name="fname" required><br><br>
+
+                    <label for="lname">Last Name:</label><br>
+                    <input type="text" id="signupLName" name="lname" required><br><br>
+
+                    <label for="email">Email:</label><br>
+                    <input type="text" id="signupEmail" name="email" required><br><br>
+
+                    <label for="pass">Password:</label><br>
+                    <input type="password" id="signupPass" name="pass" required><br><br> 
+
+                    <label for="cpass">Confirm Password:</label><br>
+                    <input type="password" id="signupCPass" name="cpass" required><br><br><br>
+
+                    <input type="submit" value="Sign up">
+                </form>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="container">
+                <img class="home-bg-projects"src="../media/internal-banner.jpg" alt="WE-SPARK Health Institute" width="100%">
+                <div class="centered-project-listings">
+                    <h1 class="title-project-listings">Project Listings Page</h1>
+                </div>
+                <div class="filter-section">
+                    <label for="funding"><b>Filter by Funding</b></label>
+                    <div>
+                        <select id="funding">
+                            <option value="1">All</option>
+                            <option value="2">Projects Funded by WE-SPARK</option>
+                            <option value="3">Nationally/Internationally Externally Funded Projects</option>
+                            <option value="4">Locally Externally Funded Projects</option>
+                        </select>
+                        <br><br>
+                        <label for="funding"><b>Filter by Status</b></label>
+                        <form>
+                            <label>Active</label>
+                            <input type="checkbox" id="active">
+                            <label>Inactive</label>
+                            <input type="checkbox">
+                        </form>
+                        
+                        <form>
+                            <label for="datemin"><b>Filter by Date Posted: Enter a date after 2014-01-01</b></label>
+                            <input type="date" id="datemin" name="datemin" min="2014-01-01" max="2022-03-28"><br><br>
+                        </form>
+                        
+                        <form>
+                            <label for="funding"><b>Filter by Institution</b></label><br>
+                            <input type="checkbox" id="institution1" name="institution1" value="Hotel Dieu Grace Healthcare">
+                            <label for="institution1">Hotel Dieu Grace Healthcare</label><br>
+                            <input type="checkbox" id="institution2" name="instituion2" value="National/International">
+                            <label for="instituion2">National/International</label><br>
+                            <input type="checkbox" id="institution3" name="institution3" value="Regional">
+                            <label for="institution3"> Regional</label><br>
+                            <input type="checkbox" id="institution4" name="institution4" value="St. Clair College">
+                            <label for="institution4">St. Clair College</label><br>
+                            <input type="checkbox" id="institution5" name="institution5" value="University of Windsor">
+                            <label for="institution4">University of Windsor</label><br>
+                            <input type="checkbox" id="institution5" name="institution5" value="Windsor Regional Hospital">
+                            <label for="institution4">Windsor Regional Hospital</label><br>
+                        </form>
+                    </div>  
+                </div>
+                <div>
+                    <div class="sponsors-section">
+                        <img class="sponsor" src="../media/logo_uow.png" alt="University of Windsor">
+                        <img class="sponsor" src="../media/logo_wrh.png" alt="Windsor Regional Hospital">
+                        <img class="sponsor" src="../media/logo_scc.png" alt="Saint Clair College">
+                        <img class="sponsor" src="../media/logo_hdg.png" alt="Hotel Dieu Grace">
+                    </div>
+                    
+                </div>
+            </div>
         </div>
     </body>
 </html>
